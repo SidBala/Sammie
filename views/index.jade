@@ -1,5 +1,11 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    h1= title
+    p Welcome to #{title}
+    form(action="/orders/new" method="post")
+        input(type="text" name="person" value='sid' readonly)
+        input(type="submit" value="Submit")
+    form(action="/orders/new" method="post")
+        input(type="text" name="person" value='johnny' readonly)
+        input(type="submit" value="Submit")
