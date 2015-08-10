@@ -80,7 +80,7 @@ casper.then(function() {
 });
 
 casper.then(function then() {
-    this.capture('yoursitelist.png');
+    this.capture('public/output.png');
 });
 
 casper.run();

@@ -14,7 +14,7 @@ router.post('/new', function(req, res, next) {
 
   ChildProcess.exec(command)
   .then(function(result) {
-    res.send('Ordering for you: ' + util.inspect(result));
+    res.send('<html><body><img src="/output.png"></body> </html>');
   })
   .fail(function (err) {
       console.error('ERROR: ', err);
