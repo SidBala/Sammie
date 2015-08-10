@@ -66,14 +66,14 @@ casper.then(function() {
   this.wait(1000);
 });
 
-casper.then(function() {
-    // aggregate results for the 'casperjs' search
-    this.fill('form[name="delivery_form"]', { pickup_date2: '10'}, true);
-});
-
-casper.then(function() {
-  this.wait(1000);
-});
+// casper.then(function() {
+//     // aggregate results for the 'casperjs' search
+//     this.fill('form[name="delivery_form"]', { pickup_date2: '10'}, true);
+// });
+//
+// casper.then(function() {
+//   this.wait(1000);
+// });
 
 casper.then(function() {
     // aggregate results for the 'casperjs' search
