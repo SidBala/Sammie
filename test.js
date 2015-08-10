@@ -6,13 +6,14 @@ function getLinks() {
     document.querySelectorAll("td div.product")[1].parentNode.parentNode.childNodes[2].childNodes[0].childNodes[0].childNodes[0].nextSibling.onclick({clientX: 800});
 }
 
-function addToCart() {
-    add_mods();
-}
-
-casper.start('http://www.oftendining.com/restaurant_info/order.php?store_id=2231&oid=1', function() {
+casper.start('http://www.oftendining.com/restaurant_info/order.php?store_id=4484&oid=1', function() {
     this.echo(this.getTitle());
 });
+
+casper.then(function then() {
+    this.capture('public/test1.png');
+});
+
 
 casper.then(function() {
     // aggregate results for the 'casperjs' search
@@ -25,7 +26,9 @@ casper.then(function() {
 
 casper.then(function() {
     // aggregate results for the 'casperjs' search
-    this.evaluate(addToCart);
+    this.evaluate(function() {
+      add_mods();
+    });
 });
 
 casper.then(function() {
@@ -46,6 +49,17 @@ casper.then(function() {
 casper.then(function() {
     // aggregate results for the 'casperjs' search
     this.fill('form[name="login_form"]', { username: 'sid.bala@outlook.com', password: 'DoEpicShit!' }, true);
+});
+
+casper.then(function() {
+  this.wait(1000);
+});
+
+casper.then(function() {
+    // aggregate results for the 'casperjs' search
+    this.evaluate(function() {
+      choose_order('101');
+    });
 });
 
 casper.then(function() {
